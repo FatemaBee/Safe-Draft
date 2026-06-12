@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeDraft</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="app-header">
+    <div class="header-lockup">
+      <span class="header-icon" aria-hidden="true">🔒</span>
+      <div>
+        <h1 class="app-title">SafeDraft</h1>
+        <p class="app-subtitle">Local PII redaction demo</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ── Step 1: Generate ───────────────────────────────── -->
+    <section class="card" id="card-generate">
+      <div class="card-label">Step 1</div>
+      <h2 class="card-title">Generate a Fake Note</h2>
+      <p class="card-desc">Creates a synthetic healthcare-adjacent note with realistic fake PII. No real data is used.</p>
+      <button class="btn btn-primary" id="btn-generate">
+        ✦ Generate Fake Note
+      </button>
+      <label class="sr-only" for="textarea-input">Generated note</label>
+      <textarea
+        id="textarea-input"
+        class="textarea"
+        rows="12"
+        placeholder="Your generated note will appear here…"
+        spellcheck="false"
+      ></textarea>
+    </section>
+
+    <!-- ── Step 2: Redact ─────────────────────────────────── -->
+    <section class="card" id="card-redact">
+      <div class="card-label">Step 2</div>
+      <h2 class="card-title">Remove PII + Copy</h2>
+      <p class="card-desc">Sanitizes the note locally in your browser, then copies the clean text to your clipboard.</p>
+      <div class="btn-row">
+        <button class="btn btn-danger" id="btn-redact">
+          ⚡ Remove PII + Copy
+        </button>
+        <span class="copy-status" id="copy-status" aria-live="polite"></span>
+      </div>
+      <label class="sr-only" for="textarea-output">Sanitized note</label>
+      <textarea
+        id="textarea-output"
+        class="textarea textarea-output"
+        rows="12"
+        readonly
+        placeholder="Sanitized text will appear here after redaction…"
+        spellcheck="false"
+      ></textarea>
+    </section>
+
+    <!-- ── Detection Summary (hidden until redaction runs) ── -->
+    <section class="card card-summary" id="card-summary" aria-hidden="true">
+      <div class="summary-header">
+        <h2 class="card-title">Detection Summary</h2>
+        <span class="summary-timestamp" id="summary-timestamp"></span>
+      </div>
+
+      <!-- Badge grid: 4 columns, one per PII type -->
+      <div class="badge-grid" id="badge-grid">
+        <!-- Populated by popup.js -->
+      </div>
+
+      <p class="total-removed" id="total-removed"></p>
+
+      <button class="btn btn-outline" id="btn-download">
+        ↓ Download Summary
+      </button>
+    </section>
+
+  </main>
+
+  <!-- ── Disclaimer Footer ──────────────────────────────── -->
+  <footer class="disclaimer">
+    ⚠ Educational proof-of-concept. Redaction is imperfect. Review before sharing. <strong>Not HIPAA compliant.</strong>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

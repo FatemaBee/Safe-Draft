@@ -1,0 +1,338 @@
+/* ═══════════════════════════════════════════════════════════
+   SafeDraft – popup.css
+   Design intent: clinical clarity with a trust-forward palette.
+   Navy + slate for structure; amber warning accent; generous
+   whitespace so nothing feels rushed or dangerous.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Reset & base ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Palette */
+  --navy:        #1a2744;
+  --navy-mid:    #243356;
+  --slate:       #4a5568;
+  --slate-light: #718096;
+  --blue-accent: #3b82f6;
+  --blue-soft:   #dbeafe;
+  --red-action:  #dc2626;
+  --red-soft:    #fee2e2;
+  --amber:       #d97706;
+  --amber-soft:  #fef3c7;
+  --green:       #059669;
+  --green-soft:  #d1fae5;
+  --bg:          #f8fafc;
+  --surface:     #ffffff;
+  --border:      #e2e8f0;
+  --text-main:   #1e293b;
+  --text-muted:  #64748b;
+
+  /* Type */
+  --font-ui: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+
+  /* Shape */
+  --radius: 8px;
+  --radius-sm: 4px;
+}
+
+/* ── Document shell ────────────────────────────────────────── */
+html {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-main);
+  background: var(--bg);
+}
+
+body {
+  width: 500px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Screen-reader only utility ────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+.app-header {
+  background: var(--navy);
+  padding: 14px 20px;
+}
+
+.header-lockup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.app-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.app-subtitle {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 1px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Main layout ───────────────────────────────────────────── */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+}
+
+.card-label {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-accent);
+  background: var(--blue-soft);
+  padding: 2px 7px;
+  border-radius: 99px;
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.card-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--blue-accent);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--navy-mid);
+}
+
+.btn-danger {
+  background: var(--red-action);
+  color: #fff;
+}
+
+.btn-danger:hover {
+  opacity: 0.88;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+  padding: 7px 14px;
+}
+
+.btn-outline:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+/* ── Button row ────────────────────────────────────────────── */
+.btn-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* ── Textareas ─────────────────────────────────────────────── */
+.textarea {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 12px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--text-main);
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  resize: vertical;
+  transition: border-color 0.15s;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--blue-accent);
+}
+
+.textarea-output {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #14532d;
+}
+
+/* ── Copy status ───────────────────────────────────────────── */
+.copy-status {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--green);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.copy-status.visible {
+  opacity: 1;
+}
+
+/* ── Detection Summary card ────────────────────────────────── */
+.card-summary {
+  display: none; /* hidden until redaction runs */
+}
+
+.card-summary.visible {
+  display: block;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.summary-timestamp {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-align: right;
+  line-height: 1.4;
+}
+
+/* ── Badge grid ────────────────────────────────────────────── */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.badge-count {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.badge-count.nonzero {
+  color: var(--red-action);
+}
+
+.badge-label {
+  font-size: 9.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* ── Total line ────────────────────────────────────────────── */
+.total-removed {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  background: var(--amber-soft);
+  border-left: 3px solid var(--amber);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ── Disclaimer footer ─────────────────────────────────────── */
+.disclaimer {
+  padding: 10px 20px;
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--amber-soft);
+  border-top: 1px solid #fde68a;
+  line-height: 1.5;
+}
+
+.disclaimer strong {
+  color: var(--amber);
+}

@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "SafeDraft",
+  "version": "1.0.0",
+  "description": "Local-first PII redaction demo for healthcare-adjacent text. Educational proof-of-concept only.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SafeDraft – Local PII Redaction"
+  },
+  "permissions": [
+    "clipboardWrite"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

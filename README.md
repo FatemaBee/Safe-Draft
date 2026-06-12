@@ -8,11 +8,17 @@ A Chrome browser extension (Manifest V3) that helps users practice removing obvi
 ---
 
 Demo
-<img width="497" height="604" alt="Screenshot 2026-06-12 at 4 38 28 PM" src="https://github.com/user-attachments/assets/8afc2a63-850c-47f9-808e-8d0fe1768749" />
+
+
+
+
+<img width="497" height="604" alt="Screenshot 2026-06-12 at 4 37 55 PM" src="https://github.com/user-attachments/assets/b9501f4e-d25b-458d-8b2e-a569671237cb" />
+
 
 <img width="497" height="604" alt="Screenshot 2026-06-12 at 4 38 22 PM" src="https://github.com/user-attachments/assets/332498ba-e363-45b0-b419-657791ddba13" />
 
-<img width="497" height="604" alt="Screenshot 2026-06-12 at 4 37 55 PM" src="https://github.com/user-attachments/assets/b9501f4e-d25b-458d-8b2e-a569671237cb" />
+
+<img width="497" height="604" alt="Screenshot 2026-06-12 at 4 38 28 PM" src="https://github.com/user-attachments/assets/8afc2a63-850c-47f9-808e-8d0fe1768749" />
 
 
 ## What it does
